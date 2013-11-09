@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %} </title>
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <meta name="keywords" content="{% block keywords %}网络安全,我的方向,python ,Linux,webSafe,一枚javaer到安全渗透的个人成长记录 {% endblock %}">
+    <meta name="description" content="{% block desc %}关于渗透,编程,一些记录 {% endblock %}">
+    <meta name="author" content="WeirdBird">
+    <meta name="baidu-site-verification" content="Rgy98WVOni"/>
+    <meta name="google-site-verification" content="-bJRff2YQF5YWcrm3CBzHEe0DYP4sTJvV-4bdAjlQ9k"/>
+    <link rel="pingback" href="/xmlrpc">
+    <link rel="shortcut icon" href="/static/favicon.ico">
+    <link href="/static/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/static/bootstrap/css/docs.css" rel="stylesheet">
+    <link href="/static/blog/css/style.css" rel="stylesheet">
+    {% block extend_style %}{% endblock %}
+
+
+</head>
+<body data-twttr-rendered="true" style="position: static;">
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="container">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".bs-navbar-collapse">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse ">
+            <ul class="nav navbar-nav">
+                <li class=""><a href="/"> 首页 </a></li>
+                {% for page in pages %}
+                    <li class="">
+                        {% if page.link %}
+                            <a href="{{ page.line }}">{{ page.title }}</a>
+                        {% else %}
+                            <a href="/{{ page.alias }}/">{{ page.title }}</a>
+                        {% endif %}
+                    </li>
+                {% endfor %}
+            </ul>
+            <form class="navbar-form pull-right" method="get" action="/">
+                <input type="text" class="form-control" name="s" id="s" style="width: 200px;" value="">
+                <button type="submit" class="btn btn-default">搜索</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<div class="bs-header">
+    <div class="container mylogo">
+                <h1> WeirdBird 的储忆柜</h1>
+
+               <p>关注python、WebSafe、linux、安全审计、互联网创业 </p>
+
+        <ul class="nav nav-tabs">
+            {% for category in categories %}
+                {% if category.is_nav %}
+                    <li class="dropdown"><a class="dropdown-toggle"
+                                            href="/category/{{ category.alias }}">  {{ category.name }} </a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+<div class="container" id="content">
+    <div class="row">
+        <div id="main" class="col-lg-9">
+            {% block main %}{% endblock %}
+        </div>
+
+        <div class="sidebar col-lg-3">
+            {% include "includes/siderbar.html" %}
+        </div>
+    </div>
+
+    <div class="">
+        其他分类:
+        <ul class="nav nav-pills">
+            {% for category in categories %}
+                {% if category.is_nav %}
+                    <li><a href="/category/{{ category.alias }}">{{ category.name }}</a></li>
+                {% endif %}
+            {% endfor %}
+        </ul>
+    </div>
+
+</div>
+
+
+{% include "includes/footer.html" %}
+</body>
+</html>

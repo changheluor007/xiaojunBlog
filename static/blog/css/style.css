@@ -1,0 +1,76 @@
+.container {
+    max-width: 980px;
+}
+.navbar-fixed-top, .navbar-fixed-bottom {
+    position: absolute;
+}
+.bs-header {
+    font-size: 16px;
+    padding: 10px 10px 0px;
+}
+
+.bs-header h1 {
+    font-size: 30px;
+}
+
+p {
+    line-height: 24px;
+    margin-left: 100px;
+}
+
+.caption h3 a {
+    color: #333;
+}
+
+
+/* 姝ｆ枃 */
+.content h1 {
+    font-size: 25px;
+}
+
+.content {
+    padding: 20px 40px 0 0;
+    font-size: 15px;
+}
+
+.content p {
+    padding: 5px 0px;
+    margin: 0;
+    line-height: 26px;
+}
+
+.content img {
+    margin:0 auto;
+    display: table-cell;
+}
+
+.info {
+    color: #999;
+}
+/*渚ф爮*/
+.sidebar h3 {
+    font-size: 18px;
+}
+.sidebar ul.links {
+    -webkit-padding-start: 0;
+}
+.sidebar ul.links li {
+    list-style: none;
+    padding-bottom: 5px;
+    width:100%; white-space:nowrap; word-break:keep-all; overflow:hidden; text-overflow:ellipsis;
+}
+
+.sidebar ul.ds-recent-comments {
+    margin-left: -40px;
+}
+.under_line {
+    border-bottom: 1px solid #e8e8e8;
+    padding-bottom: 5px;
+}
+/*code*/
+.docutils {
+    color: #028DFA;
+}
+.mylogo{
+    background: url("/static/blog/img/logo_png.png") no-repeat;
+}
